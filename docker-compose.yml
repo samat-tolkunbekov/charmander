@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  charmander:
+    build:
+      context: .
+    container_name: charmander
+    hostname: charmander
+    networks:
+      - mynet
+    ports:
+      - 9898:9898
+    deploy:
+      restart_policy:
+        condition: on-failure
+
+networks:
+  mynet:
+    driver: bridge
