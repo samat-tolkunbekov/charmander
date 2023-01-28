@@ -14,8 +14,12 @@ func main() {
 
 	server := r.Group("/pages")
 	{
-		server.GET("/", func(c *gin.Context) {
+		server.GET("/branch", func(c *gin.Context) {
 			internal.GetPages(c)
+		})
+
+		server.GET("/get-user-data", func(c *gin.Context) {
+			internal.GetUserData(c)
 		})
 
 		server.POST("/get-data", func(c *gin.Context) {

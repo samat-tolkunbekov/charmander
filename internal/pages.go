@@ -15,3 +15,9 @@ func GetPages(c *gin.Context) {
 
 	return
 }
+
+func GetUserData(c *gin.Context) {
+	c.JSON(http.StatusOK, gin.H{
+		"message": "You are good my friend",
+	})
+}
