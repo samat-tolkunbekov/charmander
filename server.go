@@ -1,10 +1,10 @@
 package main
 
 import (
+	"charmander/internal"
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"net/http"
-	"os"
 )
 
 func main() {
@@ -12,23 +12,25 @@ func main() {
 
 	r := gin.Default()
 
-	//r.LoadHTMLGlob("../../web/static/*.tmpl")
-
-	server := r.Group("/server")
+	server := r.Group("/pages")
 	{
+		server.GET("/branch", func(c *gin.Context) {
+			internal.GetPages(c)
+		})
+
+		server.GET("/get-user-data", func(c *gin.Context) {
+			internal.GetUserData(c)
+		})
+
 		server.POST("/get-data", func(c *gin.Context) {
 			c.JSON(http.StatusOK, gin.H{
-				"message": "Data returned",
+				"message": "Data new returned",
 				"body":    "Here you go",
 			})
-
-			//c.HTML(http.StatusOK, "index.tmpl", gin.H{
-			//	"title": "Hello world!",
-			//})
 		})
 	}
 
-	err := r.Run(":" + os.Getenv("APP_PORT"))
+	err := r.Run(":9898")
 
 	if err != nil {
 		return

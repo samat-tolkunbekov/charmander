@@ -1,10 +1,10 @@
 <component name="ProjectRunConfigurationManager">
-    <configuration default="false" name="charmander:9999" type="GoApplicationRunConfiguration" factoryName="Go Application">
+    <configuration default="false" name="charmander:9898" type="GoApplicationRunConfiguration" factoryName="Go Application">
         <module name="charmander" />
         <working_directory value="$PROJECT_DIR$" />
         <envs>
             <env name="MODE" value="debug" />
-            <env name="APP_PORT" value="9999" />
+            <env name="APP_PORT" value="9898" />
             <env name="APP_TOKEN" value="control_12" />
         </envs>
         <EXTENSION ID="net.ashald.envfile">
@@ -18,9 +18,9 @@
             </ENTRIES>
         </EXTENSION>
         <kind value="PACKAGE" />
-        <package value="charmander/cmd/charmander" />
+        <package value="charmander/" />
         <directory value="$PROJECT_DIR$" />
-        <filePath value="$PROJECT_DIR$/cmd/charmander/main.go" />
+        <filePath value="$PROJECT_DIR$/server.go" />
         <method v="2" />
     </configuration>
 </component>
